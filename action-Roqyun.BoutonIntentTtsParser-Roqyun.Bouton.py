@@ -6,11 +6,7 @@ MQTT_PORT = 1883
 MQTT_ADDR = "{}:{}".format(MQTT_IP_ADDR, str(MQTT_PORT))
 
 def intent_received(hermes, intent_message):
-    
-	sentence = 'Execution';
- 
-    hermes.publish_end_session(intent_message.session_id, sentence)
-
-
+	sentence = "Je m'appelle Snips"
+	hermes.publish_end_session(intent_message.session_id, sentence)
 with Hermes(MQTT_ADDR) as h:
-    h.subscribe_intents(intent_received).start()
+	h.subscribe_intents(intent_received).start()
