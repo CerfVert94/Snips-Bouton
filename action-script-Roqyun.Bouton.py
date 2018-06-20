@@ -10,7 +10,7 @@ def intent_received(hermes, intent_message):
     if intent_message.intent.intent_name == 'Roqyun:Allumage':
         sentence = 'Allumage'
     else:
-        hermes.publish_end_session(intent_message.session_id, "Je n'ai pas compris. Vueillez répéter s'il vous plaît.")
+        hermes.publish_end_session(intent_message.session_id, "Je n'ai pas compris. Veuillez répéter s'il vous plaît.")
         return
 
     hermes.publish_end_session(intent_message.session_id, sentence)
