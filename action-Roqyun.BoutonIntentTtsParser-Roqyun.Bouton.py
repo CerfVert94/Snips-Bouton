@@ -7,8 +7,7 @@ MQTT_ADDR = "{}:{}".format(MQTT_IP_ADDR, str(MQTT_PORT))
 
 def intent_received(hermes, intent_message):
 	sentence = "Je m'appelle Snips"
-	if intent_message.intent.intent_name == 'Roqyun:Allumage' :
-		sentence += ' que voulez-vous?'
+	sentence += 'intent_message.intent.intent_name
 	
 	hermes.publish_end_session(intent_message.session_id, sentence)
 with Hermes(MQTT_ADDR) as h:
