@@ -8,7 +8,7 @@ MQTT_ADDR = "{}:{}".format(MQTT_IP_ADDR, str(MQTT_PORT))
 def intent_received(hermes, intent_message):
     
 	sentence = 'Execution';
-    if intent_message.intent.intentName == 'Roqyun:Allumage':
+    if intent_message.intent.intent_name == 'Roqyun:Allumage':
         sentence += 'Allumage'
     else:
         sentence += "Je n'ai pas compris. Veuillez répéter s'il vous plaît.")
@@ -18,4 +18,4 @@ def intent_received(hermes, intent_message):
 
 
 with Hermes(MQTT_ADDR) as h:
-    h.subscribe_intents(intent_received).start()
+    h.subscribe_intents('Roqyun:Allumage').start()
