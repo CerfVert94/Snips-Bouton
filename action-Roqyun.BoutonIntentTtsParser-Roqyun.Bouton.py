@@ -22,7 +22,7 @@ def intent_received(hermes, intent_message):
 			sentence = " Je n'ai pas compris"
 	elif intentName == 'Roqyun:Extinction' :
 		if probability > 0.9 :
-			sentence = "J'eteint la lumiere"
+			sentence = "Jeteint la lumiere"
 			GPIO.setup(32, GPIO.OUT, initial=GPIO.LOW)
 		else :
 			sentence = " Je n'ai pas compris"
