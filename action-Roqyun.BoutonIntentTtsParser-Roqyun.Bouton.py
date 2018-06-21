@@ -8,7 +8,7 @@ MQTT_ADDR = "{}:{}".format(MQTT_IP_ADDR, str(MQTT_PORT))
 
 def intent_received(hermes, intent_message):
 	sentence = "Je m'appelle Snips"
-	payload = intent_message.intent
+	payload = intent_message.customData
 	probability = payload['probability']
 	hermes.publish_end_session(intent_message.session_id, sentence)
 with Hermes(MQTT_ADDR) as h:
