@@ -1,7 +1,6 @@
 #!/usr/bin/env python2
 from hermes_python.hermes import Hermes
-import json
-from gpiozero import LED
+import RPi.GPIO as GPIO
 
 MQTT_IP_ADDR = "localhost"
 MQTT_PORT = 1883
