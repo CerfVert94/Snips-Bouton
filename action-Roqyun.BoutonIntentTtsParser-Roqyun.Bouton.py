@@ -10,7 +10,6 @@ def intent_received(hermes, intent_message):
 	sentence = "Je m'appelle Snips"
 	payload = intent_message.intent
 	probability = payload['probability']
-	intentName = payload['intentName']
 	hermes.publish_end_session(intent_message.session_id, sentence)
 with Hermes(MQTT_ADDR) as h:
 	h.subscribe_intents(intent_received).start()
