@@ -16,7 +16,7 @@ def intent_received(hermes, intent_message):
 		else :
 			sentence += " et je n'ai pas compris"
 	else :
-		sentence += " et je n'ai compris"
+		sentence += " et je n'ai pas compris"
 	hermes.publish_end_session(intent_message.session_id, sentence)
 with Hermes(MQTT_ADDR) as h:
 	h.subscribe_intents(intent_received).start()
