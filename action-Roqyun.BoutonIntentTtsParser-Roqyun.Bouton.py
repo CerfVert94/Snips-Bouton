@@ -7,15 +7,11 @@ MQTT_PORT = 1883
 MQTT_ADDR = "{}:{}".format(MQTT_IP_ADDR, str(MQTT_PORT))
 
 def intent_received(hermes, intent_message):
-
 	probability = intent_message.intent.probability
 	intentName = intent_message.intent.intent_name
 	
 	if intentName == 'Roqyun:Allumage' :
-		if probability > 0.9 :
-			sentence = "J'allume la lumière"
-		else :
-			sentence = " Je n'ai pas compris"
+		sentence = "J'allume la lumière"
 			
 	hermes.publish_end_session(intent_message.session_id, sentence)
 with Hermes(MQTT_ADDR) as h:
