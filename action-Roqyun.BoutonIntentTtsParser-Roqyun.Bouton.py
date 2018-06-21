@@ -11,10 +11,10 @@ def intent_received(hermes, intent_message):
 	probability = intent_message.intent.probability
 	intentName = intent_message.intent.intent_name
 	if intentName == 'Roqyun:Allumage' :
-		if probability > 0.7 :
+		if probability > 0.9 :
 			sentence += " et j'ai compris"
 		else :
-			sentence += " et je n'ai compris"
+			sentence += " et je n'ai pas compris"
 	else :
 		sentence += " et je n'ai compris"
 	hermes.publish_end_session(intent_message.session_id, sentence)
