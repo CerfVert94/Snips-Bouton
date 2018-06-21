@@ -16,11 +16,6 @@ def intent_received(hermes, intent_message):
 			sentence = "J'allume la lumière"
 		else :
 			sentence = " Je n'ai pas compris"
-	elif intentName == 'Roqyun:Extinction' :
-		if probability > 0.9 :
-			sentence = "J'éteint la lumière"
-		else :
-			sentence = " Je n'ai pas compris"
 			
 	hermes.publish_end_session(intent_message.session_id, sentence)
 with Hermes(MQTT_ADDR) as h:
