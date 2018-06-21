@@ -1,7 +1,7 @@
 #!/usr/bin/env python2
 from hermes_python.hermes import Hermes
 import json
-import RPi.GPIO as GPIO
+#import RPi.GPIO as GPIO
 
 
 
@@ -10,8 +10,8 @@ MQTT_PORT = 1883
 MQTT_ADDR = "{}:{}".format(MQTT_IP_ADDR, str(MQTT_PORT))
 
 def intent_received(hermes, intent_message):
-	GPIO.setwarnings(False);
-	GPIO.setmode(GPIO.BOARD)
+#	GPIO.setwarnings(False);
+#	GPIO.setmode(GPIO.BOARD)
 	
 	#Lire l'objet JSON généré par Snips
 	probability = intent_message.intent.probability
