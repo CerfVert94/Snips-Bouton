@@ -14,13 +14,13 @@ def intent_received(hermes, intent_message):
 	if intentName == 'Roqyun:Allumage' :
 		if probability > 0.9 :
 			sentence = "Je allume la lumiere"
-			#GPIO.setup(32, GPIO.OUT, initial=GPIO.HIGH)
+			GPIO.setup(32, GPIO.OUT, initial=GPIO.HIGH)
 		else :
 			sentence = " Je n'ai pas compris"
 	elif intentName == 'Roqyun:Extinction' :
 		if probability > 0.9 :
 			sentence = "Je eteint la lumiere"
-			#GPIO.setup(32, GPIO.OUT, initial=GPIO.HIGH)
+			GPIO.setup(32, GPIO.OUT, initial=GPIO.LOW)
 		else :
 			sentence = " Je n'ai pas compris"
 			
